@@ -51,7 +51,8 @@
     alienData.circleColor = [UIColor blackColor];
     alienData.borderRadius = 12;
     alienData.circleRadius = 5;
-    
+    alienData.enabled = NO;
+  
     self.sexGroup = [[TNRadioButtonGroup alloc] initWithRadioButtonData:@[maleData, femaleData, alienData] layout:TNRadioButtonGroupLayoutHorizontal];
     self.sexGroup.identifier = @"Sex group";
     [self.sexGroup create];

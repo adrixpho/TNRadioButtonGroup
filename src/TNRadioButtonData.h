@@ -14,6 +14,7 @@
 @property (nonatomic) NSInteger tag;
 @property (nonatomic, copy) NSString *labelText;
 @property (nonatomic) BOOL selected;
+@property (nonatomic) BOOL enabled;
 
 @property (nonatomic, strong) UIFont *labelFont;
 @property (nonatomic, strong) UIColor *labelColor;

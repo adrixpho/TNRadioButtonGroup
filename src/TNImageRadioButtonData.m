@@ -10,4 +10,15 @@
 
 @implementation TNImageRadioButtonData
 
+- (instancetype)init {
+  
+  self = [super init];
+  
+  if (self) {
+    self.enabled = YES;
+  }
+  
+  return self;
+}
+
 @end

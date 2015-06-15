@@ -25,7 +25,6 @@
     if (self) {
         // Initialization code
         self.data = data;
-        
         [self setup];
     }
     

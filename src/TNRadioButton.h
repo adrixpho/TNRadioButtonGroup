@@ -24,6 +24,7 @@
 @property (nonatomic, strong) UIView *radioButton;
 @property (nonatomic, strong) UILabel *lblLabel;
 @property (nonatomic, strong) UIButton *btnHidden;
+@property (nonatomic) BOOL enabled;
 
 @property (nonatomic, weak) id<TNRadioButtonDelegate> delegate;
 

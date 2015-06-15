@@ -19,7 +19,8 @@
     self = [super init];
     
     if (self) {
-        self.data = data;
+      self.data = data;
+      self.enabled = YES;
     }
     
     return self;
@@ -57,7 +58,7 @@
         labelSize = [self.data.labelText sizeWithFont:self.data.labelFont forWidth:150 lineBreakMode:NSLineBreakByWordWrapping];
         
     } else {
-        CGRect labelRect = [self.data.labelText boundingRectWithSize:CGSizeMake(150, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.data.labelFont} context:nil];
+        CGRect labelRect = [self.data.labelText boundingRectWithSize:CGSizeMake(300, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.data.labelFont} context:nil];
         
         labelSize = CGSizeMake(labelRect.size.width, labelRect.size.height);
         

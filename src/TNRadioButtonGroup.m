@@ -27,10 +27,10 @@ NSString *const SELECTED_RADIO_BUTTON_CHANGED = @"selectedRadioButtonChanged";
     self = [super init];
     
     if (self) {
-        self.radioButtonData = radioButtonData;
-        self.layout = layout;
-        self.marginBetweenItems = 15;
-		self.itemsInsets = UIEdgeInsetsZero;
+      self.radioButtonData = radioButtonData;
+      self.layout = layout;
+      self.marginBetweenItems = 15;
+      self.itemsInsets = UIEdgeInsetsZero;
     }
     
     return self;
@@ -63,7 +63,15 @@ NSString *const SELECTED_RADIO_BUTTON_CHANGED = @"selectedRadioButtonChanged";
         TNRadioButton *radioButton = nil;
         
         if( !data.labelFont) data.labelFont = self.labelFont;
-        if( !data.labelColor) data.labelColor = self.labelColor;
+      
+        if ( data.enabled )
+        {
+          if( !data.labelColor) { data.labelColor = self.labelColor; }
+        }
+        else
+        {
+          data.labelColor = [UIColor grayColor];
+        }
         
         if( [data isKindOfClass:[TNCircularRadioButtonData class]] ){
             radioButton = [[TNCircularRadioButton alloc] initWithData:(TNCircularRadioButtonData *)data];
@@ -77,7 +85,7 @@ NSString *const SELECTED_RADIO_BUTTON_CHANGED = @"selectedRadioButtonChanged";
         if( self.selectedRadioButton ){
             data.selected = NO;
         }
-        
+        radioButton.enabled = data.enabled;
         data.tag = i;
         
         radioButton.delegate = self;
@@ -116,7 +124,10 @@ NSString *const SELECTED_RADIO_BUTTON_CHANGED = @"selectedRadioButtonChanged";
 
 #pragma mark - TNRadioButtonDelegate methods
 - (void)radioButtonDidChange:(TNRadioButton *)radioButton {
-    
+  
+  if (!radioButton.enabled)
+    return;
+  
     for (TNRadioButton *rb in self.radioButtons) {
         
         if( rb != radioButton ){
