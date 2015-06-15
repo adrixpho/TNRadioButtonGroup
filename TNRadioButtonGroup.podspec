@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "TNRadioButtonGroup"
-  s.version      = "0.4"
+  s.version      = "0.5"
   s.summary      = "Create easy radio button groups in objective-c"
   s.homepage     = "http://blog.the-nerd.be/2014/04/tnradiobuttongroup-radio-buttons-for-objective-c/"
   s.screenshots  = "http://cl.ly/V8Hq/download/Screen%20Shot%202014-04-22%20at%2022.27.42.png"
